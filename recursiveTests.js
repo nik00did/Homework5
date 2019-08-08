@@ -133,32 +133,32 @@ describe('binarySearch', () => {
         {
             array: [1, 2, 3, 4, 5],
             target: 3,
-            expected: true
+            expected: 2
         },
         {
             array: [1, 2, 3, 4, 5],
             target: 1,
-            expected: true
+            expected: 0
         },
         {
             array: [1, 2, 3, 4, 5],
             target: 5,
-            expected: true
+            expected: 4
         },
         {
             array: [1, 2, 3, 4, 5],
             target: 2,
-            expected: true
+            expected: 1
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9],
             target: 8,
-            expected: true
+            expected: 7
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: 9,
-            expected: true
+            expected: 8
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],

@@ -107,7 +107,8 @@ BSTree.prototype.push = function (element) {
 };
 
 BSTree.prototype.remove = function (value) {
-    if (!binarySearch(this.toArray(), value)) {//!this.toArray().includes(value)
+    let index = binarySearch(this.toArray(), value);
+    if (!index && index !==0) {//!this.toArray().includes(value)
         return this.toArray();
     }
 
@@ -138,6 +139,15 @@ BSTree.prototype.remove = function (value) {
     this._root = deleteNode(temp, value);
     this._length--;
     return this.toArray();
+};
+
+BSTree.prototype.getBalanced = function () {
+    let balancedArray =  this.toArray();
+
+    this._root = null;
+    this._length = 0;
+
+    return this.init(balancedArray);
 };
 
 let tree = new BSTree();

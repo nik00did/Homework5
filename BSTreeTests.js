@@ -335,5 +335,45 @@ describe('BSTree', () => {
         });
     });
 
-    describe('getBalance()', () => {});
+    describe('getBalance()', () => {
+        const tesdData = [
+            {
+                array: [1, 2, 3, 4, 5],
+                expected: [1, 2, 3, 4, 5]
+            },
+            {
+                array: [1, 2, 3],
+                expected: [1, 2, 3]
+            },
+            {
+                array: [1, 2],
+                expected: [1, 2]
+            },
+            {
+                array: [1],
+                expected: [1]
+            },
+            {
+                array: [1, 2, 4, 3, 5, 2, 6],
+                expected: [1, 2, 2, 3, 4, 5, 6]
+            },
+            {
+                array: [],
+                expected: []
+            }
+        ];
+
+        tesdData.forEach(data => {
+            const {array, expected} = data;
+
+            let tree = new BSTree();
+            tree.init(array);
+
+            const actual = tree.getBalanced();
+
+            it(`Should return ${expected}`, () => {
+                assert.deepEqual(actual, expected);
+            });
+        });
+    });
 });
