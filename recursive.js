@@ -23,28 +23,25 @@ const getFibonacciNumbers = numberElement => {
 
 const binarySearch = (array, target, start = 0, finish = 0) => {
     if (!array || (!target && target !== 0)) {
-        return `_Wrong input arguments of array or target!_`
+        return false;
     }
 
     if (target < array[0] || target > array[array.length - 1]) {
-        return `_Not found! Array [${array}] doesn't have the target "${target}"!_`;
+        return false;
     }
 
     finish = !finish ? array.length - 1 : finish;
     const middle = Math.floor((start + finish) / 2);
 
     if (target === array[middle] ) {
-        return `_Target is found on ${middle} position_`;
+        return true;
     }
 
     if (start === finish - 1 && target !== array[start] && target !== array[finish]) {
-        return `_Not found target ${target}!_`;
-    } else if (target === array[start]) {
-        return `_Target is found on ${start} position_`;
-    } else if (target === array[finish]){
-        return `_Target is found on ${finish} position_`;
+        return false;
+    } else if (target === array[start] || target === array[finish]) {
+        return true;
     }
-
 
     if (target > array[middle]) {
         return binarySearch(array, target, middle, finish);
@@ -53,7 +50,6 @@ const binarySearch = (array, target, start = 0, finish = 0) => {
     if (target < array[middle]) {
         return binarySearch(array, target, start, middle);
     }
-
 };
 //
 // let array = [1, 2, 3, 4, 5];

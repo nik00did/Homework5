@@ -133,77 +133,77 @@ describe('binarySearch', () => {
         {
             array: [1, 2, 3, 4, 5],
             target: 3,
-            expected: `_Target is found on 2 position_`
+            expected: true
         },
         {
             array: [1, 2, 3, 4, 5],
             target: 1,
-            expected: `_Target is found on 0 position_`
+            expected: true
         },
         {
             array: [1, 2, 3, 4, 5],
             target: 5,
-            expected: `_Target is found on 4 position_`
+            expected: true
         },
         {
             array: [1, 2, 3, 4, 5],
             target: 2,
-            expected: `_Target is found on 1 position_`
+            expected: true
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9],
             target: 8,
-            expected: `_Target is found on 7 position_`
+            expected: true
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: 9,
-            expected: `_Target is found on 8 position_`
+            expected: true
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: 11,
-            expected: `_Not found! Array [1,2,3,4,5,6,7,8,9,10] doesn't have the target "11"!_`
+            expected: false
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: -20,
-            expected: `_Not found! Array [1,2,3,4,5,6,7,8,9,10] doesn't have the target "-20"!_`
+            expected: false
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: 100,
-            expected: `_Not found! Array [1,2,3,4,5,6,7,8,9,10] doesn't have the target "100"!_`
+            expected: false
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: 0,
-            expected: `_Not found! Array [1,2,3,4,5,6,7,8,9,10] doesn't have the target "0"!_`
+            expected: false
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: 5.5,
-            expected: `_Not found target 5.5!_`
+            expected: false
         },
         {
             array: undefined,
             target: 5,
-            expected: `_Wrong input arguments of array or target!_`
+            expected: false
         },
         {
             array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             target: undefined,
-            expected: `_Wrong input arguments of array or target!_`
+            expected: false
         },
         {
             array: undefined,
             target: undefined,
-            expected: `_Wrong input arguments of array or target!_`
+            expected: false
         },
         {
             array: null,
             target: 2,
-            expected: `_Wrong input arguments of array or target!_`
+            expected: false
         },
     ];
 
