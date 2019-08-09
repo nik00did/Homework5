@@ -319,6 +319,20 @@ describe('BSTree', () => {
                 value: 0,
                 expected: [1, 2, 3, 4, 5, 6]
             },
+            {
+                array: [0],
+                value: 0,
+                expected: []
+            },
+            {
+                array: [1],
+                value: 1,
+                expected: []
+            },{
+                array: [1, 2],
+                value: 1,
+                expected: [2]
+            }
         ];
 
         testData.forEach(data => {
